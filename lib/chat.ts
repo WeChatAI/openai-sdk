@@ -1,3 +1,7 @@
-export async function chat(query: string) {}
+import { transferNLP } from './util'
 
-export default {};
+function chat(query: Object) {
+    return transferNLP('CHAT', query)
+}
+
+export { chat }
