@@ -1,14 +1,29 @@
 {
-  "name": "openai-client",
+  "name": "openai-sdk",
   "version": "1.0.0",
-  "description": "",
+  "description": "http://openai.weixin.qq.com,AI,智能对话",
   "main": "index.js",
   "scripts": {
     "start": "ts-node-dev --respawn --transpileOnly --prefer-ts example/index.ts",
     "test": "ts-mocha --paths test/index.ts"
   },
-  "author": "",
-  "license": "ISC",
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WeChatAI/openai-sdk.git"
+  },
+
+  "bugs": {
+    "url": "https://github.com/WeChatAI/openai-sdk/issues"
+  },
+  "homepage": "https://github.com/WeChatAI/openai-sdk#readme",
+  "keywords": [
+    "http://openai.weixin.qq.com",
+    "AI",
+    "智能对话"
+  ],
+  "author": "lindanli, zhang-ning",
+  "license": "MIT",
   "dependencies": {
     "axios": "^0.19.0",
     "jsonwebtoken": "^8.5.1"
