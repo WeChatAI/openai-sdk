@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "ts-node-dev --respawn --transpileOnly --prefer-ts example/index.ts"
+    "start": "ts-node-dev --respawn --transpileOnly --prefer-ts example/index.ts",
+    "test": "ts-mocha --paths test/index.ts"
   },
   "author": "",
   "license": "ISC",
@@ -14,8 +14,17 @@
     "jsonwebtoken": "^8.5.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.7.0",
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
+    "@babel/register": "^7.7.0",
+    "@types/expect": "^24.3.0",
+    "@types/mocha": "^5.2.7",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.2",
     "njwt": "^1.0.0",
     "request": "^2.88.0",
+    "ts-mocha": "^6.0.0",
     "ts-node-dev": "^1.0.0-pre.44",
     "typescript": "^3.7.2"
   }
