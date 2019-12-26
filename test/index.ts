@@ -1,18 +1,16 @@
-import assert from 'assert';
 import { expect } from 'chai';
-import * as openai from "../index"
-let {
-    init,
-    chat,
-    nlp
-} = openai.default
+import {
+  init,
+  chat,
+  nlp
+} from "../index"
 
 let { tokenize, ner, sentiment, sensitive } = nlp
 init({
-    TOKEN: 'PWj9xdSdGU3PPnqUUrTf7uGgQ9Jvn7',
-    EncodingAESKey: '4jzHSI2p3EHXh3qBao5onJ39HcOO00ZoiGVNVvjFkPW'
+  TOKEN: 'PWj9xdSdGU3PPnqUUrTf7uGgQ9Jvn7',
+  EncodingAESKey: '4jzHSI2p3EHXh3qBao5onJ39HcOO00ZoiGVNVvjFkPW'
 })
-describe('chat',() => {
+describe('chat', () => {
   it('test chat', async () => {
     let chatRes = await chat({
       username: "uid",
@@ -40,8 +38,8 @@ describe('nlp', () => {
         q: "帮我订两张后天上午的火车票"
       }
     })
-    expect(nerRes).with.lengthOf(2)
-    expect(nerRes[0]['type']).to.equal('number')
+    expect(nerRes).to.have.property('result').with.lengthOf(2)
+    expect(nerRes['result'][0]['type']).to.equal('number')
   })
 
   it('test sentiment', async () => {

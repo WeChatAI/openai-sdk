@@ -2,17 +2,17 @@
   "name": "openai-sdk",
   "version": "1.0.0",
   "description": "http://openai.weixin.qq.com,AI,智能对话",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "start": "ts-node-dev --respawn --transpileOnly --prefer-ts example/index.ts",
-    "test": "ts-mocha --paths test/index.ts"
+    "test": "ts-mocha --paths test/index.ts",
+    "build": "tsc" 
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/WeChatAI/openai-sdk.git"
   },
-
   "bugs": {
     "url": "https://github.com/WeChatAI/openai-sdk/issues"
   },
@@ -25,20 +25,15 @@
   "author": "lindanli, zhang-ning",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.19.0",
-    "jsonwebtoken": "^8.5.1"
+    "njwt": "^1.0.0",
+    "request": "^2.88.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.7.0",
-    "@babel/core": "^7.7.2",
-    "@babel/preset-env": "^7.7.1",
-    "@babel/register": "^7.7.0",
-    "@types/expect": "^24.3.0",
+    "@types/chai": "^4.2.7",
     "@types/mocha": "^5.2.7",
+    "@types/request": "^2.48.4",
     "chai": "^4.2.0",
     "mocha": "^6.2.2",
-    "njwt": "^1.0.0",
-    "request": "^2.88.0",
     "ts-mocha": "^6.0.0",
     "ts-node-dev": "^1.0.0-pre.44",
     "typescript": "^3.7.2"

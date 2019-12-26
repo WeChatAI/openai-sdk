@@ -1,9 +1,3 @@
-import {chat} from "./lib/chat";
-import nlp  from  "./lib/nlp";
-import {auth}  from  "./lib/auth";
-export default {
-  init: auth,
-  chat: chat,
-  nlp: nlp
-};
-
+export { chat } from "./lib/chat";
+export { nlp } from "./lib/nlp";
+export { auth as init } from "./lib/auth";

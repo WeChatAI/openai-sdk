@@ -1,7 +1,9 @@
+import { ResponseData } from './response';
 const nJwt = require('njwt');
 const request = require('request')
 import { TOKEN, EncodingAESKey } from './auth';
-import * as api from './API'
+import { api, ApiTypes } from './API'
+import { QueryData } from './query';
 
 function checkInit() {
     let error = ""
@@ -14,13 +16,13 @@ function checkInit() {
     return error
 }
 
-function genToken(query) {
+function genToken(query: QueryData) {
     let jwt = nJwt.create(query, EncodingAESKey, "HS256");
     let token = jwt.compact();
     return token;
 }
 
-async function transferNLP(nlpType: string, query: Object) {
+async function transferNLP<T extends keyof ApiTypes>(nlpType: T, query: QueryData){
     return new Promise(async (resolve, reject) => {
         let error = checkInit()
         if (!!error) {
@@ -28,11 +30,11 @@ async function transferNLP(nlpType: string, query: Object) {
             return
         }
         let token = genToken(query)
-        await request.post(`${api[`${nlpType}`]}/${TOKEN}`, {
+        await request.post(`${api[nlpType]}/${TOKEN}`, {
             json: {
                 query: token
             }
-        }, (error, stderr, stdout) => {
+        }, (error: any, stderr: any, stdout: ResponseData) => {
             if (error) {
                 reject(error)
                 return

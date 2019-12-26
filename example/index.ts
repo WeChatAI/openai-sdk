@@ -1,10 +1,10 @@
-import openai from "../index"
-
-let {
+import {
     init,
     chat,
     nlp
-} = openai
+} from "../index"
+
+
 
 init({
     TOKEN: 'PWj9xdSdGU3PPnqUUrTf7uGgQ9Jvn7',
@@ -60,10 +60,9 @@ nlp.sentiment({
     console.log('情感分析返回：', res)
 }, res => {
     console.log('reject res:', res)
-})
-.catch(e => {
-    console.log('error', e)
-})
+}).catch(e => {
+        console.log('error', e)
+    })
 
 // 敏感词识别
 nlp.sensitive({
