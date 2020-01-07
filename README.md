@@ -1,3 +1,7 @@
+[![npm version](https://badge.fury.io/js/openai-sdk.svg)](https://www.npmjs.com/package/openai-sdk)
+[![Actions status | kunl/openai-sdk](https://github.com/kunl/openai-sdk/workflows/Node%20CI/badge.svg)](https://github.com/kunl/openai-sdk/actions?actions?workflow=Node%20CI)
+
+
 # 快速开始
 
 ## 1. 安装openai-sdk
