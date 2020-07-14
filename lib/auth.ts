@@ -1,7 +1,12 @@
 let TOKEN = ''
 let EncodingAESKey = ''
 
-function auth(opt: Object) {
+interface AuthOptions {
+  TOKEN: string;
+  EncodingAESKey: string;
+}
+
+function auth(opt: AuthOptions) {
   TOKEN = opt.TOKEN
   EncodingAESKey = opt.EncodingAESKey
 }

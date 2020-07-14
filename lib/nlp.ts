@@ -1,19 +1,21 @@
+import { ResponseNER, ResponseSENTIMENT, ResponseSENSITIVE } from './response';
 import { transferNLP } from './util'
+import { QueryData } from './query'
 
-function tokenize(query: Object) {
+function tokenize(query: QueryData) {
     return transferNLP('TOKENIZE', query)
 }
 
-function ner(query: Object) {
-    return transferNLP('NER', query)
+function ner(query: QueryData){
+    return transferNLP('NER', query) as Promise<ResponseNER>
 }
 
-function sentiment(query: Object) {
-    return transferNLP('SENTIMENT', query)
+function sentiment(query: QueryData) {
+    return transferNLP('SENTIMENT', query) as Promise<ResponseSENTIMENT>
 }
 
-function sensitive(query: Object) {
-    return transferNLP('SENSITIVE', query)
+function sensitive(query: QueryData) {
+    return transferNLP('SENSITIVE', query) as Promise<ResponseSENSITIVE>
 }
 
-export default { tokenize, ner, sentiment, sensitive };
+export const nlp = { tokenize, ner, sentiment, sensitive };

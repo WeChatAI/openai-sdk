@@ -1,7 +1,7 @@
+import { ResponseCHAT } from './response';
 import { transferNLP } from './util'
+import { QueryData } from './query'
 
-function chat(query: Object) {
-    return transferNLP('CHAT', query)
+export function chat(query: QueryData) {
+    return transferNLP('CHAT', query) as Promise<ResponseCHAT>
 }
-
-export { chat }
