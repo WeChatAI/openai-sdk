@@ -33,7 +33,7 @@
     "@types/mocha": "^5.2.7",
     "@types/request": "^2.48.4",
     "chai": "^4.2.0",
-    "mocha": "^6.2.2",
+    "mocha": "^10.2.0",
     "ts-mocha": "^6.0.0",
     "ts-node-dev": "^1.0.0-pre.44",
     "typescript": "^3.7.2"
